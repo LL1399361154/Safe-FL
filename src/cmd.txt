@@ -1,0 +1,11 @@
+cd /root/server/Believable
+nohup python -u believable.py 4 > log.txt 2>&1 &
+cd /root/server/Cloud
+nohup python -u cloud_server.py 2 > log.txt 2>&1 &
+cd /root/server/Edge1
+nohup python -u edge_server.py 2 > log.txt 2>&1 &
+cd /root/server/Edge2
+nohup python -u edge_server.py 2 > log.txt 2>&1 &
+
+
+ps -ef | grep python

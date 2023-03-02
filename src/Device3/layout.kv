@@ -1,0 +1,291 @@
+<ScreenManager>:
+    HomeScreen
+    ConfigScreen
+    RunScreen
+<HomeScreen>:
+    name:'HomeScreen'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "texture.jpg"
+    BoxLayout:
+        orientation:'vertical'
+        BoxLayout:
+            orientation:'vertical'
+            Label:
+                text:""
+            
+            Image: 
+                source: 'machine-learning.png'
+                size_hint:(1,2)
+        ButtonPadding:
+            cols:3
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""  
+            Button:
+                text:"Config"
+                on_release:root.manager.current = 'ConfigScreen'
+                font_name:"reduct"
+                font_size: 40
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"" 
+
+        ButtonPadding:
+            cols:3
+            Padding:
+                Label:
+                    text:""
+            Button:
+                text:"Run"
+                on_release:root.manager.current = 'RunScreen'
+                font_name:"reduct"
+                font_size: 40
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""  
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"Device ID:RGV2aWNlIGlkIGlzIDAz"
+                    font_name:"reduct"
+                    font_size: 40
+            Padding:
+                Label:
+                    text:""
+        
+<ConfigScreen>:
+    name:"ConfigScreen"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "texture.jpg"
+    BoxLayout:
+        orientation:'vertical'
+        Padding:
+            BoxLayout:
+                orientation:"horizontal"
+                Label:
+                    text:""
+        InputWidget:
+            BoxLayout:
+                orientation:"vertical"
+                LabelWidget:
+                    orientation:"horizontal"
+                    Label:
+                        id:rootiptip
+                        text:"Believable Server"
+                        font_name:"reduct"
+                        font_size: 40
+                        size_hint:(0.7,1)
+                    TextInput:
+                        id:rootip
+                        multiline:False
+                        font_name:"reduct"
+                        font_size: 40
+                        text:"IP:PORT"
+                    Label:
+                        text:""
+                        size_hint:(0.3,1)
+                Padding:
+                    BoxLayout:
+                        orientation:"horizontal"
+                        Label:
+                            text:""
+                LabelWidget:
+                    orientation:"horizontal"
+                    Label:
+                        id:edgeiptip
+                        font_name:"reduct"
+                        text:"Edge Server"
+                        font_size: 40
+                        size_hint:(0.7,1)  
+                    TextInput:
+                        id:edgeip
+                        font_name:"reduct"
+                        multiline:False
+                        font_size: 40
+                        text:"IP2:PORT2"
+                    Label:
+                        text:""
+                        size_hint:(0.3,1)
+        Padding:
+            BoxLayout:
+                orientation:"horizontal"
+                Label:
+                    text:""
+        ButtonPadding:
+            cols:3
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""  
+            Button:
+                text:"Submit"
+                font_name:"reduct"
+                on_release:root.submit()
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+        ButtonPadding:
+            cols:3
+            Padding:
+                Label:
+                    text:""
+            Button:
+                text:"Back"
+                font_name:"reduct"
+                on_release:root.manager.current = 'HomeScreen'
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""  
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"Device ID:RGV2aWNlIGlkIGlzIDAz"
+                    font_name:"reduct"
+                    font_size: 40
+            Padding:
+                Label:
+                    text:""
+       
+<RunScreen>:
+    name:"RunScreen"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "texture.jpg"
+    BoxLayout:
+        orientation:"vertical"
+        Label:
+            id:"result"
+            size_hint: (1, 2)
+            font_name:"reduct"
+            font_size: 40
+            text: root.res
+        ButtonPadding:
+            cols:3
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""  
+            Button:
+                text:"Run"
+                font_name:"reduct"
+                on_release:root.run()
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+        ButtonPadding:
+            cols:3
+            Padding:
+                Label:
+                    text:""
+            Button:
+                text:"Back"
+                font_name:"reduct"
+                on_release:root.manager.current = 'HomeScreen'
+            Padding:
+                Label:
+                    text:""
+            
+            Padding:
+                Label:
+                    text:"" 
+            Padding:
+                Label:
+                    text:""  
+            
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:""
+            Padding:
+                Label:
+                    text:"Device ID:RGV2aWNlIGlkIGlzIDAz"
+                    font_name:"reduct"
+                    font_size: 40
+            Padding:
+                Label:
+                    text:""
+        
